@@ -20,7 +20,10 @@ describe('create', function () {
   }))
 
   it('Create', () => co(function * () {
-
+    let filename = `${__dirname}/../tmp/foo/bar.json`
+    let store = create(filename)
+    assert.ok(store)
+    assert.equal(store.filename, filename)
   }))
 })
 
