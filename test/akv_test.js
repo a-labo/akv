@@ -24,6 +24,7 @@ describe('akv', function () {
   it('Akv', () => co(function * () {
     let filename = `${__dirname}/../tmp/testing-akv/akv.json`
     let akv = new AKV(filename, { interval: 100 })
+
     yield akv.touch()
     assert.ok(fs.existsSync(filename))
     yield akv.destroy()
