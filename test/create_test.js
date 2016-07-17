@@ -23,7 +23,7 @@ describe('create', function () {
     let filename = `${__dirname}/../tmp/foo/bar.json`
     let store = create(filename)
     assert.ok(store)
-    assert.equal(store.filename, filename)
+    assert.equal(store.storage.filename, filename)
   }))
 })
 
