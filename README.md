@@ -80,13 +80,14 @@ const akv = require('akv')
 const co = require('co')
 
 co(function * () {
+  let storage = akv('tmp/my-storage.json')
   // Set key value
-  yield akv.set('foo', 'bar')
+  yield storage.set('foo', 'bar')
   // Get key value
-  let foo = yield akv.get('foo')
+  let foo = yield storage.get('foo')
   console.log(foo) // => bar
   // Delete by key
-  yield akv.del('foo')
+  yield storage.del('foo')
 }).catch((err) => console.error(err))
 
 ```
