@@ -38,6 +38,8 @@ describe('storage', function () {
 
     assert.ok(fs.existsSync(filename))
     yield storage.unlink()
+    yield storage.unlink()
+    yield storage.unlink()
     assert.ok(!fs.existsSync(filename))
   }))
 })
