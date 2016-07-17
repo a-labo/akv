@@ -1,0 +1,41 @@
+/**
+ * Test case for akv.
+ * Runs with mocha.
+ */
+'use strict'
+
+const AKV = require('../lib/akv.js')
+const assert = require('assert')
+const asleep = require('asleep')
+const co = require('co')
+
+describe('akv', function () {
+  this.timeout(3000)
+
+  before(() => co(function * () {
+
+  }))
+
+  after(() => co(function * () {
+
+  }))
+
+  it('Akv', () => co(function * () {
+    let filename = `${__dirname}/../tmp/testing-akv/akv.json`
+    let akv = new AKV(filename)
+    for (let i = 0; i < 5; i++) {
+      yield akv.set('index', String(i))
+      let index = yield akv.get('index')
+      assert.equal(index, String(i))
+    }
+    for (let i = 0; i < 100; i++) {
+      akv.set('index', String(i))
+      akv.get('index').then((index) => {
+        // console.log('index', index)
+      })
+    }
+    assert.equal(yield akv.get('index'), '99')
+  }))
+})
+
+/* global describe, before, after, it */
