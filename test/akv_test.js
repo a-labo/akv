@@ -40,6 +40,9 @@ describe('akv', function () {
       })
     }
     assert.equal(yield akv.get('index'), '99')
+
+    assert.deepEqual(yield akv.all(), yield akv.all())
+    assert.deepEqual(yield akv.keys(), yield akv.keys())
   }))
 })
 

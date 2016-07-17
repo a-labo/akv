@@ -108,6 +108,9 @@ Available methods
 | ---- | ----------- |
 | `.touch() -> Promise` | Touch file |
 | `.set(key, value) -> Promise` | Set a value |
+| `.keys() -> Promise` | Get all keys |
+| `.get(key) -> Promise` | Get a value |
+| `.all() -> Promise` | Get all values |
 | `.del(key) -> Promise` | Delete a value |
 | `.destroy() -> Promise` | Delete all values |
 
