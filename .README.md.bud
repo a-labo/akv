@@ -5,6 +5,7 @@
 'use strict'
 
 const { readmeMdBud } = require('ape-tmpl')
+const { commentsInFile } = require('ape-doc')
 const pkg = require('./package.json')
 
 module.exports = readmeMdBud({
@@ -21,7 +22,21 @@ module.exports = readmeMdBud({
   },
   overview: 'doc/overview.md',
   links: require('./doc/links'),
-  vars: {}
+  vars: {
+    methods () {
+      return commentsInFile(require.resolve('./lib/akv'))
+        .filter((comment) => !!comment.function)
+        .map((comment) => {
+          let [func] = comment.function
+          return {
+            name: func.name,
+            description: comment.description,
+            params: comment.param,
+            returns: comment.returns[ 0 ]
+          }
+        })
+    }
+  }
 })
 
 if (!module.parent) {

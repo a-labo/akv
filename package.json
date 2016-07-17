@@ -1,6 +1,6 @@
 {
   "name": "akv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple key value store using single json file",
   "main": "lib",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
+    "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.1",
     "ape-reporting": "^3.0.1",

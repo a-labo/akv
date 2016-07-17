@@ -95,6 +95,24 @@ co(function * () {
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
+<!-- Section from "doc/guides/03.Methods.md.hbs" Start -->
+
+<a name="section-doc-guides-03-methods-md"></a>
+
+Methods
+---------
+
+Available methods
+
+| Signature | Description |
+| ---- | ----------- |
+| `.set(key, value) -> Promise` | Set a value |
+| `.del(key) -> Promise` | Delete a value |
+| `.destroy() -> Promise` | Delete all values |
+
+
+<!-- Section from "doc/guides/03.Methods.md.hbs" End -->
+
 
 <!-- Sections Start -->
 
