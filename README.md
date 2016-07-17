@@ -106,6 +106,7 @@ Available methods
 
 | Signature | Description |
 | ---- | ----------- |
+| `.touch() -> Promise` | Touch file |
 | `.set(key, value) -> Promise` | Set a value |
 | `.del(key) -> Promise` | Delete a value |
 | `.destroy() -> Promise` | Delete all values |

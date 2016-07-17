@@ -7,6 +7,7 @@
 const AKV = require('../lib/akv.js')
 const assert = require('assert')
 const asleep = require('asleep')
+const fs = require('fs')
 const co = require('co')
 
 describe('akv', function () {
@@ -23,6 +24,10 @@ describe('akv', function () {
   it('Akv', () => co(function * () {
     let filename = `${__dirname}/../tmp/testing-akv/akv.json`
     let akv = new AKV(filename)
+    yield akv.touch()
+    assert.ok(fs.existsSync(filename))
+    yield akv.destroy()
+    assert.ok(!fs.existsSync(filename))
     for (let i = 0; i < 5; i++) {
       yield akv.set('index', String(i))
       let index = yield akv.get('index')

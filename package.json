@@ -1,6 +1,6 @@
 {
   "name": "akv",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple key value store using single json file",
   "main": "lib",
   "scripts": {
