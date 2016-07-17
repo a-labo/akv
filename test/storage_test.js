@@ -35,11 +35,11 @@ describe('storage', function () {
       let data = yield storage.read()
       assert.deepEqual(data, { foo: 'baz' })
     }
-
+    yield storage.flush()
     assert.ok(fs.existsSync(filename))
-    yield storage.unlink()
-    yield storage.unlink()
-    yield storage.unlink()
+    yield storage.purge()
+    yield storage.purge()
+    yield storage.purge()
     assert.ok(!fs.existsSync(filename))
   }))
 })

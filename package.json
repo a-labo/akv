@@ -22,7 +22,8 @@
   "dependencies": {
     "asfs": "^1.0.5",
     "co": "^4.6.0",
-    "crc": "^3.4.0"
+    "crc": "^3.4.0",
+    "defaults": "^1.0.3"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
