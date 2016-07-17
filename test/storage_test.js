@@ -23,7 +23,8 @@ describe('storage', function () {
   it('Storage', () => co(function * () {
     let filename = `${__dirname}/../tmp/testing-storage/storage01.json`
     let storage = new Storage(
-      filename
+      filename,
+      { interval: 100 }
     )
     {
       yield storage.write({ foo: 'bar' })
