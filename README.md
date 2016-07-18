@@ -83,6 +83,7 @@ co(function * () {
   let storage = akv('tmp/my-storage.json')
   // Set key value
   yield storage.set('foo', 'bar')
+
   // Get key value
   let foo = yield storage.get('foo')
   console.log(foo) // => bar
@@ -116,6 +117,27 @@ Available methods
 
 
 <!-- Section from "doc/guides/03.Methods.md.hbs" End -->
+
+<!-- Section from "doc/guides/04.Tips.md.hbs" Start -->
+
+<a name="section-doc-guides-04-tips-md"></a>
+
+Tips
+-----
+
+
+## Commit to files
+
+Normally, akv flushes data into files with some interval.
+But somethings you need to explicitly call commit changes.
+
+```
+let storage = akv('tmp/my-storage.json')
+/* ... */
+storage.commit() // Force to flush files
+```
+
+<!-- Section from "doc/guides/04.Tips.md.hbs" End -->
 
 
 <!-- Sections Start -->

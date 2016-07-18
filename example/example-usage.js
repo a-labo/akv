@@ -7,6 +7,7 @@ co(function * () {
   let storage = akv('tmp/my-storage.json')
   // Set key value
   yield storage.set('foo', 'bar')
+
   // Get key value
   let foo = yield storage.get('foo')
   console.log(foo) // => bar
