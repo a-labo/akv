@@ -26,7 +26,7 @@
     "defaults": "^1.0.3"
   },
   "devDependencies": {
-    "amocha": "^1.0.11",
+    "amocha": "^1.0.12",
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
