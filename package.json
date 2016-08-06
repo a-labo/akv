@@ -1,6 +1,6 @@
 {
   "name": "akv",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "A simple key value store using single json file",
   "main": "lib",
   "scripts": {
@@ -35,7 +35,7 @@
     "ape-tmpl": "^5.0.15",
     "ape-updating": "^4.0.5",
     "asleep": "^1.0.3",
-    "coz": "^6.0.16",
+    "coz": "^6.0.17",
     "injectmock": "^2.0.0"
   },
   "engines": {
