@@ -8,7 +8,9 @@
     "prepublish": "./ci/build.js"
   },
   "repository": "a-labo/akv",
-  "keywords": [],
+  "keywords": [
+    "store"
+  ],
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishitaka.com@gmail.com",
@@ -22,11 +24,10 @@
   "dependencies": {
     "asfs": "^1.0.5",
     "co": "^4.6.0",
-    "crc": "^3.4.0",
-    "defaults": "^1.0.3"
+    "crc": "^3.4.0"
   },
   "devDependencies": {
-    "amocha": "^1.0.12",
+    "amocha": "^1.0.14",
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
