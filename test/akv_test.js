@@ -57,7 +57,7 @@ describe('akv', function () {
     assert.deepEqual(yield akv.all(), yield akv.all())
     assert.deepEqual(yield akv.keys(), yield akv.keys())
 
-    akv.commit()
+    yield akv.commit()
   }))
 })
 

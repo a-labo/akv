@@ -22,21 +22,21 @@
   },
   "homepage": "https://github.com/a-labo/akv#readme",
   "dependencies": {
-    "asfs": "^1.0.5",
+    "asfs": "^1.1.1",
     "co": "^4.6.0",
     "crc": "^3.4.0"
   },
   "devDependencies": {
-    "amocha": "^1.0.14",
+    "amocha": "^1.0.15",
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
-    "ape-tasking": "^4.0.8",
-    "ape-tmpl": "^5.0.15",
+    "ape-tasking": "^4.0.9",
+    "ape-tmpl": "^5.0.19",
     "ape-updating": "^4.0.5",
     "asleep": "^1.0.3",
-    "coz": "^6.0.17",
+    "coz": "^6.0.20",
     "injectmock": "^2.0.0"
   },
   "engines": {
