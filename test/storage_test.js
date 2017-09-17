@@ -6,43 +6,43 @@
 
 const Storage = require('../lib/storage.js')
 const assert = require('assert')
-const co = require('co')
+
 const fs = require('fs')
 
 describe('storage', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Storage', () => co(function * () {
+  it('Storage', async () => {
     let filename = `${__dirname}/../tmp/testing-storage/storage01.json`
     let storage = new Storage(
       filename,
       { interval: 100 }
     )
     {
-      yield storage.write({ foo: 'bar' })
-      let data = yield storage.read()
+      await storage.write({ foo: 'bar' })
+      let data = await storage.read()
       assert.deepEqual(data, { foo: 'bar' })
     }
     {
-      yield storage.write({ foo: 'baz' })
-      let data = yield storage.read()
+      await storage.write({ foo: 'baz' })
+      let data = await storage.read()
       assert.deepEqual(data, { foo: 'baz' })
     }
-    yield storage.flush()
+    await storage.flush()
     assert.ok(fs.existsSync(filename))
-    yield storage.purge()
-    yield storage.purge()
-    yield storage.purge()
+    await storage.purge()
+    await storage.purge()
+    await storage.purge()
     assert.ok(!fs.existsSync(filename))
-  }))
+  })
 })
 
 /* global describe, before, after, it */

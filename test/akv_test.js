@@ -8,41 +8,40 @@ const AKV = require('../lib/akv.js')
 const assert = require('assert')
 const asleep = require('asleep')
 const fs = require('fs')
-const co = require('co')
 
 describe('akv', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Akv', () => co(function * () {
+  it('Akv', async () => {
     let filename = `${__dirname}/../tmp/testing-akv/akv.json`
-    let akv = new AKV(filename, { interval: 100 })
+    let akv = new AKV(filename, {interval: 100})
 
-    yield akv.touch()
+    await akv.touch()
     assert.ok(fs.existsSync(filename))
-    yield akv.destroy()
+    await akv.destroy()
     assert.ok(!fs.existsSync(filename))
 
     {
-      let { storage } = akv
-      yield storage.write({ foo: 'baz' })
-      let data = yield storage.read()
-      assert.deepEqual(data, { foo: 'baz' })
+      let {storage} = akv
+      await storage.write({foo: 'baz'})
+      let data = await storage.read()
+      assert.deepEqual(data, {foo: 'baz'})
       assert.ok(storage.needsFlush)
-      yield asleep(300)
+      await asleep(300)
       assert.ok(!storage.needsFlush)
     }
 
     for (let i = 0; i < 5; i++) {
-      yield akv.set('index', String(i))
-      let index = yield akv.get('index')
+      await akv.set('index', String(i))
+      let index = await akv.get('index')
       assert.equal(index, String(i))
     }
 
@@ -52,13 +51,13 @@ describe('akv', function () {
         // console.log('index', index)
       })
     }
-    assert.equal(yield akv.get('index'), '99')
+    assert.equal(await akv.get('index'), '99')
 
-    assert.deepEqual(yield akv.all(), yield akv.all())
-    assert.deepEqual(yield akv.keys(), yield akv.keys())
+    assert.deepEqual(await akv.all(), await akv.all())
+    assert.deepEqual(await akv.keys(), await akv.keys())
 
-    yield akv.commit()
-  }))
+    await akv.commit()
+  })
 })
 
 /* global describe, before, after, it */
